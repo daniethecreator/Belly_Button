@@ -92,7 +92,7 @@ function buildCharts(sample) {
     var i;
     for(i = 0; i < bardata.length; i++) {
       let foundIndex = sample_values.indexOf(bardata[i]);
-      foundIndexices.append(foundIndex);
+      foundIndexices.push(foundIndex);
     }
     console.log(foundIndexices);
     var yticks = {
