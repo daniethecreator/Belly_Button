@@ -156,27 +156,27 @@ function buildCharts(sample) {
       width: 600
     };
 
-    // 3. Use Plotly to plot the data with the layout.
+    // // 3. Use Plotly to plot the data with the layout.
 
-    Plotly.newPlot('bubble', data, bubbleLayout);
+    // Plotly.newPlot('bubble', data, bubbleLayout);
  
  
  
-    // D2: 3. Use Plotly to plot the data with the layout.
+    // // D2: 3. Use Plotly to plot the data with the layout.
    
     
-    // 4. Create the trace for the gauge chart.
-    var gaugeData = [
+    // // 4. Create the trace for the gauge chart.
+    // var gaugeData = [
      
-    ];
+    // ];
     
-    // 5. Create the layout for the gauge chart.
-    var gaugeLayout = { 
+    // // 5. Create the layout for the gauge chart.
+    // var gaugeLayout = { 
      
-    };
+    // };
 
-    // 6. Use Plotly to plot the gauge data and layout.
-    Plotly.newPlot('guage', gaugeData, gaugeLayout);
+    // // 6. Use Plotly to plot the gauge data and layout.
+    // Plotly.newPlot('guage', gaugeData, gaugeLayout);
 
   });
 }
