@@ -90,7 +90,7 @@ function buildCharts(sample) {
 
     var foundIndexices = [];
     var i;
-    for(i = 0; i < bardata.length; i++) {
+    for (i = 0; i < bardata.length; i++) {
       let foundIndex = sample_values.indexOf(bardata[i]);
       sample_values[foundIndex] = 0
       foundIndexices.push(foundIndex);
@@ -125,32 +125,34 @@ function buildCharts(sample) {
 
     Plotly.newPlot("bar", barData, barLayout);
 
+    //Deliverable 2 
+
+    // 1. Create the trace for the bubble chart.
+    var bubbleData = {
+      x: otu_ids,
+      y: sample_values,
+      text: otu_labels,
+      mode: 'markers',
+      marker: {
+        size: [40, 60, 80, 100]
+      }
+    };
+    var data = [bubbleData];
+
+    // 2. Create the layout for the bubble chart.
+    var bubbleLayout = {
+      title: 'Bacteria Cultures Per Sample',
+      label: "OTU ID",
+      showlegend: false,
+      height: 600,
+      width: 600
+    };
+
+    // 3. Use Plotly to plot the data with the layout.
+
+    Plotly.newPlot('bubble', data, bubbleLayout);
+
+
   });
 }
 
-//Deliverable 2 
-
- // 1. Create the trace for the bubble chart.
- var bubbleData = {
-  x: otu_ids,
-  y: sample_values,
-  text: otu_labels,
-  mode: 'markers',
-  marker: {
-    size: [40, 60, 80, 100]
-  }
- };
-var data = [bubbleData];
-
-// 2. Create the layout for the bubble chart.
-var bubbleLayout = {
-  title: 'Bacteria Cultures Per Sample',
-  label: "OTU ID", 
-  showlegend: false,
-  height: 600,
-  width: 600
-};
-
-// 3. Use Plotly to plot the data with the layout.
-
-Plotly.newPlot('bubble', data, bubbleLayout);
