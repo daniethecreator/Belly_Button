@@ -155,5 +155,5 @@ var bubbleLayout = {
 
 Plotly.newPlot('bubble', data, bubbleLayout);
 
-});
+};
 }
