@@ -138,7 +138,7 @@ function buildCharts(sample) {
       mode: 'markers',
       marker: {
         size: result.sample_values,
-        color: result.sample_values,
+        color: otu_ids,
         cmin: 0,
         cmax: 50,
         colorscale: 'Earth',
