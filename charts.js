@@ -134,9 +134,9 @@ function buildCharts(sample) {
       text: otu_labels,
       mode: 'markers',
       marker: {
-        size: result.sample_values
+        size: result.sample_values,
         // color:
-        // colorscale: 
+        colorscale:'Earth'
       }
     };
     var data = [bubbleData];
