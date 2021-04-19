@@ -92,6 +92,7 @@ function buildCharts(sample) {
     var i;
     for(i = 0; i < bardata.length; i++) {
       let foundIndex = sample_values.indexOf(bardata[i]);
+      sample_values[foundIndex] = 0
       foundIndexices.push(foundIndex);
     }
     console.log(foundIndexices);
