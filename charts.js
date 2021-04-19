@@ -138,8 +138,10 @@ function buildCharts(sample) {
       mode: 'markers',
       marker: {
         size: result.sample_values,
-        z: colorscalez,
-        colorscale:'Earth'
+        color: result.sample_values,
+        cmin: 0,
+        cmax: 50,
+        colorscale: 'Earth',
       }
     };
     var data = [bubbleData];
