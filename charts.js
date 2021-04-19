@@ -96,7 +96,7 @@ function buildCharts(sample) {
     }
     console.log(foundIndexices);
     var yticks = {
-      y: foundIndexices.map(row => otu_labels[row]),
+      y: foundIndexices.map(row => "OTU " + otu_ids[row]),
       x: bardata,
       type: "bar",
       orientation: "h"
