@@ -90,6 +90,9 @@ function buildCharts(sample) {
 
     var yticks = {
       y: bardata.map(row => row),
+      name: "Bacteria Cultures",
+      type: "bar",
+      orientation: "h"
     };
 
 
