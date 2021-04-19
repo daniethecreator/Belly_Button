@@ -95,7 +95,7 @@ function buildCharts(sample) {
       sample_values[foundIndex] = 0
       foundIndexices.push(foundIndex);
     }
-    console.log(foundIndexices);
+
     var yticks = {
       y: foundIndexices.map(row => "OTU " + otu_ids[row]),
       x: bardata,
@@ -130,11 +130,11 @@ function buildCharts(sample) {
     // 1. Create the trace for the bubble chart.
     var bubbleData = {
       x: otu_ids,
-      y: result.sample_values,
+      y: ,
       text: otu_labels,
       mode: 'markers',
       marker: {
-        size: [40, 60, 80, 100]
+        size: result.sample_values
         // color:
         // colorscale: 
       }
