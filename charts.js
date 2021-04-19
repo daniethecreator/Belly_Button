@@ -74,22 +74,29 @@ function buildCharts(sample) {
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
 
     var otu_ids = result.otu_ids;
-    var otu_labels = result.otu_labels
-    var sample_values = result.sample_values
+    var otu_labels = result.otu_labels;
+    var sample_values = result.sample_values;
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
     //  so the otu_ids with the most bacteria are last. 
 
-    otu_ids.sort(function (a, b) {
+    sample_values.sort(function (a, b) {
       return parseFloat(b) - parseFloat(a);
     });
 
-    let bardata = otu_ids.slice(0, 10);
+    let bardata = sample_values.slice(0, 10);
     bardata = bardata.reverse();
 
+    var foundIndexices = [];
+    var i;
+    for(i = 0; i < bardata.length; i++) {
+      let foundIndex = sample_values.indexOf(bardata[i]);
+      foundIndexices.append(foundIndex);
+    }
+    console.log(foundIndexices);
     var yticks = {
-      y: bardata.map(row => row),
+      y: bardata,
       type: "bar",
       orientation: "h"
     };
