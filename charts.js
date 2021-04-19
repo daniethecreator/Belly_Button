@@ -96,7 +96,8 @@ function buildCharts(sample) {
     }
     console.log(foundIndexices);
     var yticks = {
-      y: bardata,
+      y: foundIndexices.map(row => otu_labels[row]),
+      x: bardata,
       type: "bar",
       orientation: "h"
     };
