@@ -97,8 +97,13 @@ function buildCharts(sample) {
       }
     }
 
+    var labeles = [];
+    for(var prop in foundIndexices) {
+      labeles.push("OTU " + otu_ids[prop]);
+    }
+
     var yticks = {
-      y: Object.entries(foundIndexices).forEach(([key, value]) => "OTU " + otu_ids[key]),
+      y: labeles,
       x: bardata,
       type: "bar",
       orientation: "h"
@@ -116,8 +121,6 @@ function buildCharts(sample) {
         t: 100,
         b: 100
       }
-
-
     };
     // 10. Use Plotly to plot the data with the layout. 
 
@@ -136,7 +139,7 @@ function buildCharts(sample) {
         color: otu_ids,
         cmin: 0,
         cmax: 50,
-        colorscale: 'Earth',
+        colorscale: 'Greens',
       }
     };
     var data = [bubbleData];
