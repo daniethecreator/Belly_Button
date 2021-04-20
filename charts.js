@@ -97,11 +97,13 @@ function buildCharts(sample) {
       }
     }
 
+    console.log(foundIndexices);
+
     var labeles = [];
     for(var prop in foundIndexices) {
       labeles.push("OTU " + otu_ids[prop]);
     }
-
+    console.log(foundIndexices);
     var yticks = {
       y: labeles,
       x: bardata,
@@ -139,7 +141,7 @@ function buildCharts(sample) {
         color: otu_ids,
         cmin: 0,
         cmax: 25,
-        colorscale: 'Earth',
+        colorscale: 'Jet',
       }
     };
     var data = [bubbleData];
