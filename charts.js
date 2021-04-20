@@ -84,10 +84,10 @@ function buildCharts(sample) {
     let bardata = sample_values.sort(function (a, b) {
       return parseFloat(b) - parseFloat(a);
     });
-
+    console.log(result.sample_values)
     bardata = sample_values.slice(0, 10);
     bardata = bardata.reverse();
-
+    console.log(result.sample_values)
     var foundIndexices = [];
     var i;
     for (i = 0; i < bardata.length; i++) {
@@ -95,7 +95,7 @@ function buildCharts(sample) {
       sample_values[foundIndex] = 0
       foundIndexices.push(foundIndex);
     }
-
+    console.log(result.sample_values)
     var yticks = {
       y: foundIndexices.map(row => "OTU " + otu_ids[row]),
       x: bardata,
