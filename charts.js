@@ -127,7 +127,7 @@ function buildCharts(sample) {
     //Deliverable 2 
 
     // 1. Create the trace for the bubble chart.
-    var bubbleData = {
+    var trace = {
       x: otu_ids,
       y: sample_values,
       text: otu_labels,
@@ -138,7 +138,7 @@ function buildCharts(sample) {
         colorscale: 'Earth',
       }
     };
-    var data = [bubbleData];
+    var bubbleData = [trace];
 
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
@@ -151,7 +151,7 @@ function buildCharts(sample) {
     };
 
     // // 3. Use Plotly to plot the data with the layout.
-    Plotly.newPlot('bubble', data, bubbleLayout);
+    Plotly.newPlot('bubble', bubbleData, bubbleLayout);
 
 
 
