@@ -138,8 +138,8 @@ function buildCharts(sample) {
         size: sample_values,
         color: otu_ids,
         cmin: 0,
-        cmax: 50,
-        colorscale: 'Greens',
+        cmax: 25,
+        colorscale: 'Earth',
       }
     };
     var data = [bubbleData];
