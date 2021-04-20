@@ -95,12 +95,12 @@ function buildCharts(sample) {
         foundIndexices[foundIndex] = sample_values[foundIndex];
       }
     })
-
+    console.log(foundIndexices)
     var labeles = [];
     for(var prop in foundIndexices) {
       labeles.push("OTU " + otu_ids[prop]);
     }
-   
+    console.log(labeles)
     var yticks = {
       y: labeles,
       x: bardata,
