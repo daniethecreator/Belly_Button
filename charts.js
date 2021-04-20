@@ -90,20 +90,21 @@ function buildCharts(sample) {
 
     var foundIndexices = {};
     var i;
-    for (i = 0; i < bardata.length; i++) {
+    for (i = 0; i <= bardata.length; i++) {
       let foundIndex = sample_values.indexOf(bardata[i]);
       if (!foundIndexices[foundIndex]) {
         foundIndexices[foundIndex] = sample_values[foundIndex];
       }
     }
 
-    console.log(foundIndexices);
+    
 
     var labeles = [];
     for(var prop in foundIndexices) {
+      console.log(prop)
       labeles.push("OTU " + otu_ids[prop]);
     }
-    console.log(foundIndexices);
+   
     var yticks = {
       y: labeles,
       x: bardata,
@@ -139,9 +140,9 @@ function buildCharts(sample) {
       marker: {
         size: sample_values,
         color: otu_ids,
-        cmin: 0,
-        cmax: 25,
-        colorscale: 'Jet',
+        // cmin: 0,
+        // cmax: 25,
+        colorscale: 'Earth',
       }
     };
     var data = [bubbleData];
