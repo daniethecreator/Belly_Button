@@ -96,9 +96,10 @@ function buildCharts(sample) {
     //   return parseFloat(b) - parseFloat(a);
     // });
     bardata = dataset.slice(0, 10);
+    console.log(bardata)
     // console.log(bardata.length)
     bardata.reverse();
-
+    console.log(bardata)
     // var foundIndexices = {};
     // bardata.forEach(item => {
     //   var previousIndex = 0;
@@ -116,7 +117,7 @@ function buildCharts(sample) {
     // labeles.reverse()
     // console.log(labeles)
     var yticks = {
-      y: bardata.map(row => row.oid),
+      y: bardata.map(row => "OTU " + row.oid),
       x: bardata.map(row => row.sv),
       text: bardata.map(row => row.olb),
       type: "bar",
