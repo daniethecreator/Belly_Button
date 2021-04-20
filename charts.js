@@ -81,11 +81,11 @@ function buildCharts(sample) {
     // Hint: Get the the top 10 otu_ids and map them in descending order  
     //  so the otu_ids with the most bacteria are last. 
 
-    let bardata = sample_values.sort(function (a, b) {
+   let bardata = sample_values.slice();
+   bardata.sort(function (a, b) {
       return parseFloat(b) - parseFloat(a);
     });
-
-    bardata = sample_values.slice(0, 10);
+    let bardata = bardata.slice(0, 10);
     // bardata = bardata.reverse();
 
     var foundIndexices = {};
@@ -98,7 +98,6 @@ function buildCharts(sample) {
 
     var labeles = [];
     for(var prop in foundIndexices) {
-      console.log(prop)
       labeles.push("OTU " + otu_ids[prop]);
     }
    
