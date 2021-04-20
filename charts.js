@@ -86,7 +86,7 @@ function buildCharts(sample) {
       return parseFloat(b) - parseFloat(a);
     });
     bardata = bardata.slice(0, 10);
-    // bardata = bardata.reverse();
+    bardata = bardata.reverse();
 
     var foundIndexices = {};
     bardata.forEach(item => {
