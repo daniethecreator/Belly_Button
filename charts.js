@@ -166,7 +166,7 @@ function buildCharts(sample) {
       value: sample_one.wfreq,
       title: 
         { text: 
-          "<b>Belly Button Washing Frequency</b><br><span style='font-size:0.9em;color:gray'>Scrubs per Week</span><br><span style='font-size:0.6em;color:gray'"
+          "<b>Belly Button Washing Frequency</b><br><span style='font-size:0.9em;color:gray'>Scrubs per Week</span><br><span style='font-size:0.6em;color:gray'></span>"
       
       },
       type: "indicator",
