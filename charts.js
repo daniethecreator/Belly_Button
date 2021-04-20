@@ -84,30 +84,28 @@ function buildCharts(sample) {
     let bardata = sample_values.sort(function (a, b) {
       return parseFloat(b) - parseFloat(a);
     });
-    console.log(result.sample_values)
+
     bardata = sample_values.slice(0, 10);
     bardata = bardata.reverse();
-    console.log(result.sample_values)
-    var foundIndexices = [];
+
+    var foundIndexices = {};
     var i;
     for (i = 0; i < bardata.length; i++) {
       let foundIndex = sample_values.indexOf(bardata[i]);
-      sample_values[foundIndex] = 0
-      foundIndexices.push(foundIndex);
+      if (!foundIndexices[foundIndex]) {
+        foundIndexices[foundIndex] = sample_values[foundIndex];
+      }
     }
-    console.log(result.sample_values)
+
     var yticks = {
-      y: foundIndexices.map(row => "OTU " + otu_ids[row]),
+      y: Object.entries(foundIndexices).forEach(([key, value]) => "OTU " + otu_ids[key]),
       x: bardata,
       type: "bar",
       orientation: "h"
     };
 
-
     // 8. Create the trace for the bar chart. 
-
     var barData = [yticks];
-
 
     // 9. Create the layout for the bar chart. 
     var barLayout = {
@@ -126,15 +124,15 @@ function buildCharts(sample) {
     Plotly.newPlot("bar", barData, barLayout);
 
     //Deliverable 2 
-      
+   
     // 1. Create the trace for the bubble chart.
     var bubbleData = {
       x: otu_ids,
-      y: result.sample_values,
+      y: sample_values,
       text: otu_labels,
       mode: 'markers',
       marker: {
-        size: result.sample_values,
+        size: sample_values,
         color: otu_ids,
         cmin: 0,
         cmax: 50,
@@ -142,8 +140,6 @@ function buildCharts(sample) {
       }
     };
     var data = [bubbleData];
-
-    console.log(result.sample_values)
 
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
@@ -156,7 +152,6 @@ function buildCharts(sample) {
     };
 
     // // 3. Use Plotly to plot the data with the layout.
-
     Plotly.newPlot('bubble', data, bubbleLayout);
  
  
