@@ -146,9 +146,7 @@ function buildCharts(sample) {
       xaxis: { title: "OTU ID" },
       showlegend: false,
       hovermode: 'closest',
-      height: 600,
-      width: 600
-    };
+      };
 
     // // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot('bubble', bubbleData, bubbleLayout);
