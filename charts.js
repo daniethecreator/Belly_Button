@@ -168,8 +168,12 @@ function buildCharts(sample) {
       value: sample_one.wfreq,
       title: { text: "Scrubs per Week" },
       type: "indicator",
-      mode: "gauge+number"
-    };
+      mode: "gauge+number",
+      gauge: {
+        axis: { range: [null, 10], tickwidth: 1, tickcolor: "black" },
+        bar: { color: "black" },
+    }
+  };
     
     var gaugeData = [trace3];
 
