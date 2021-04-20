@@ -91,9 +91,13 @@ function buildCharts(sample) {
 
     var foundIndexices = {};
     bardata.forEach(item => {
-      let foundIndex = sample_values.indexOf(item);
-      if (!foundIndexices[foundIndex]) {
-        foundIndexices[foundIndex] = sample_values[foundIndex];
+      var found = false;
+      while (!found) {
+        var foundIndex = sample_values.indexOf(item);
+        if (!foundIndexices[foundIndex]) {
+          foundIndexices[foundIndex] = sample_values[foundIndex];
+          found = true;
+        }
       }
     })
     console.log(foundIndexices)
