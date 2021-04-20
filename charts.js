@@ -171,7 +171,7 @@ function buildCharts(sample) {
       mode: "gauge+number",
       gauge: {
         axis: { range: [null, 10], tickwidth: 1, tickcolor: "black" },
-        bar: { color: "darkblue" },
+        bar: { color: "black" },
         steps: [
           { range: [0, 2], color: "red" },
           { range: [2, 4], color: "orange" },
