@@ -86,6 +86,7 @@ function buildCharts(sample) {
       return parseFloat(b) - parseFloat(a);
     });
     bardata = bardata.slice(0, 10);
+    console.log(bardata.length)
     bardata.reverse();
 
     var foundIndexices = {};
@@ -100,6 +101,7 @@ function buildCharts(sample) {
     for(var prop in foundIndexices) {
       labeles.push("OTU " + otu_ids[prop]);
     }
+    labeles.reverse()
     console.log(labeles)
     var yticks = {
       y: labeles,
