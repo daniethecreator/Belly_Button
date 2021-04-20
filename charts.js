@@ -85,7 +85,7 @@ function buildCharts(sample) {
    bardata.sort(function (a, b) {
       return parseFloat(b) - parseFloat(a);
     });
-    let bardata = bardata.slice(0, 10);
+    bardata = bardata.slice(0, 10);
     // bardata = bardata.reverse();
 
     var foundIndexices = {};
