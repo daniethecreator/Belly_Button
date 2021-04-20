@@ -89,15 +89,12 @@ function buildCharts(sample) {
     bardata = bardata.reverse();
 
     var foundIndexices = {};
-    var i;
-    for (i = 0; i <= bardata.length; i++) {
-      let foundIndex = sample_values.indexOf(bardata[i]);
+    bardata.forEach(item => {
+      let foundIndex = sample_values.indexOf(item);
       if (!foundIndexices[foundIndex]) {
         foundIndexices[foundIndex] = sample_values[foundIndex];
       }
-    }
-
-    
+    })
 
     var labeles = [];
     for(var prop in foundIndexices) {
@@ -140,8 +137,6 @@ function buildCharts(sample) {
       marker: {
         size: sample_values,
         color: otu_ids,
-        // cmin: 0,
-        // cmax: 25,
         colorscale: 'Earth',
       }
     };
