@@ -126,10 +126,7 @@ function buildCharts(sample) {
     Plotly.newPlot("bar", barData, barLayout);
 
     //Deliverable 2 
-    var colorscalez;
-    Plotly.d3.json('https://raw.githubusercontent.com/plotly/datasets/master/custom_heatmap_colorscale.json', function(figure) {
-      colorscalez = figure.z;
-  });
+      
     // 1. Create the trace for the bubble chart.
     var bubbleData = {
       x: otu_ids,
