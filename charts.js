@@ -81,35 +81,44 @@ function buildCharts(sample) {
     // Hint: Get the the top 10 otu_ids and map them in descending order  
     //  so the otu_ids with the most bacteria are last. 
 
-   var bardata = sample_values.slice();
-   bardata.sort(function (a, b) {
-      return parseFloat(b) - parseFloat(a);
-    });
-    bardata = bardata.slice(0, 10);
-    console.log(bardata.length)
-    bardata.reverse();
-
-    var foundIndexices = {};
-    bardata.forEach(item => {
-      var found = false;
-      while (!found) {
-        var foundIndex = sample_values.indexOf(item);
-        if (!foundIndexices[foundIndex]) {
-          foundIndexices[foundIndex] = sample_values[foundIndex];
-          found = true;
-        }
+    var bardata = sample_values.slice();
+    var dataset = bardata.map((value, i) => {
+      return {
+        sv: value,
+        oid: otu_ids[i],
+        olb: otu_labels[i]
       }
     })
-    console.log(foundIndexices)
-    var labeles = [];
-    for(var prop in foundIndexices) {
-      labeles.push("OTU " + otu_ids[prop]);
-    }
-    labeles.reverse()
-    console.log(labeles)
+    dataset.sort(function (a, b) {
+      return parseFloat(b.sv) - parseFloat(a.sv);
+    })
+    // bardata.sort(function (a, b) {
+    //   return parseFloat(b) - parseFloat(a);
+    // });
+    bardata = dataset.slice(0, 10);
+    // console.log(bardata.length)
+    bardata.reverse();
+
+    // var foundIndexices = {};
+    // bardata.forEach(item => {
+    //   var previousIndex = 0;
+    //   if (Object.values(foundIndexices).includes(item)) {
+    //     previousIndex = foundIndexices[Object.values(foundIndexices).indexOf(item)]
+    //   }
+    //   var foundIndex = sample_values.indexOf(item, previousIndex);
+    //   foundIndexices[foundIndex] = sample_values[foundIndex];
+    // })
+    // console.log(foundIndexices)
+    // var labeles = [];
+    // for (var prop in foundIndexices) {
+    //   labeles.push("OTU " + otu_ids[prop]);
+    // }
+    // labeles.reverse()
+    // console.log(labeles)
     var yticks = {
-      y: labeles,
-      x: bardata,
+      y: bardata.map(row => row.oid),
+      x: bardata.map(row => row.sv),
+      text: bardata.map(row => row.olb),
       type: "bar",
       orientation: "h"
     };
@@ -132,7 +141,7 @@ function buildCharts(sample) {
     Plotly.newPlot("bar", barData, barLayout);
 
     //Deliverable 2 
-   
+
     // 1. Create the trace for the bubble chart.
     var bubbleData = {
       x: otu_ids,
@@ -150,29 +159,29 @@ function buildCharts(sample) {
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
       title: 'Bacteria Cultures Per Sample',
-      xaxis: {title: "OTU ID"},
+      xaxis: { title: "OTU ID" },
       showlegend: false,
-      hovermode:'closest',
+      hovermode: 'closest',
       height: 600,
       width: 600
     };
 
     // // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot('bubble', data, bubbleLayout);
- 
- 
- 
+
+
+
     // // D2: 3. Use Plotly to plot the data with the layout.
-   
-    
+
+
     // // 4. Create the trace for the gauge chart.
     // var gaugeData = [
-     
+
     // ];
-    
+
     // // 5. Create the layout for the gauge chart.
     // var gaugeLayout = { 
-     
+
     // };
 
     // // 6. Use Plotly to plot the gauge data and layout.
