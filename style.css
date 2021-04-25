@@ -16,3 +16,7 @@
       background-color: white;
 
 }
+
+.user-select-none svg-container {
+    margin: auto;
+}
