@@ -1,6 +1,6 @@
 .container {
 
-    background-color: #8ac6f7;
+    background-color: darkblue;
     
   }
 
@@ -8,3 +8,11 @@
     background-image: url("./bacteria.jpg");
     background-size: 100% 100%;
   }
+
+  .special-text{
+      font-family:optima;
+      color: darkblue;
+      opacity: 70%;
+      background-color: white;
+
+}
