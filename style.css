@@ -11,7 +11,7 @@
 
   .special-text{
       font-family:optima;
-      color: darkblue;
+      color: darkblue !important;
       opacity: 70%;
       background-color: white;
 
